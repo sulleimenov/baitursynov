@@ -1,0 +1,83 @@
+.opening
+	display: flex
+	justify-content: center
+	align-items: center
+	position: fixed
+	z-index: 999
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba($accent, 0.7)
+	transition: all .2s ease
+	@include media-breakpoint-down(md)
+		background-size: 500px
+	@include media-breakpoint-down(sm)
+		background-size: 300px
+	&:not(.show)
+		opacity: 0
+		visibility: hidden
+	&__box
+		display: flex
+		flex-direction: column
+		justify-content: center
+	&__text
+		color: #fff
+		text-align: center
+		font-size: 21px
+		text-transform: uppercase
+		@include media-breakpoint-down(sm)
+			font-size: 14px
+	&__title
+		color: #fff
+		font-size: 48px
+		text-align: center
+		text-transform: uppercase
+		line-height: 1.35
+		font-weight: 700
+		z-index: 10
+		margin: 0 0 40px
+		@include media-breakpoint-down(md)
+			font-size: 68px
+		@include media-breakpoint-down(sm)
+			font-size: 36px
+			margin: 20px 0
+	&__close
+		width: 50px
+		height: 50px
+		position: absolute
+		top: 20px
+		right: 30px
+		background-image: url(../images/icons/x.svg)
+		background-repeat: no-repeat
+		background-position: center
+		background-size: 30px
+		z-index: 10
+		cursor: pointer
+	&__timer
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		grid-template-rows: none
+		column-gap: 30px
+		margin-bottom: 60px	
+		@include media-breakpoint-down(sm)
+			column-gap: 10px
+	&__timer-count
+		padding: 30px
+		background-color: #fff
+		border-radius: 10px
+		font-size: 68px
+		font-weight: 700
+		text-align: center
+		@include media-breakpoint-down(md)
+			font-size: 40px
+			padding: 10px
+		@include media-breakpoint-down(sm)
+			font-size: 22px
+	&__timer-name
+		font-weight: 700
+		text-align: center
+		color: #fff
+		text-transform: uppercase
+		font-size: 18px
+		margin-top: 10px

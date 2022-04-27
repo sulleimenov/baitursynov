@@ -1,0 +1,88 @@
+.books
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+	grid-template-rows: none
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	@include media-breakpoint-down(sm)
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: none
+	&__item
+		padding-top: 20px
+		padding-bottom: 10px
+		transition: background 0.3s ease
+		&:hover
+			background-color: #E6E6E6
+	&__image
+		width: 170px
+		margin: 0 auto
+		@include media-breakpoint-down(sm)
+			width: 100%
+	&__title
+		text-align: center
+		margin-top: 10px
+
+.books-show
+	font-size: 14px
+	color: #727272
+	text-align: center
+
+.book-lists
+	display: flex
+	flex-direction: column
+	&__item
+		display: flex
+		padding-top: 20px
+		padding-bottom: 20px
+		border-bottom: 1px solid $border
+		@include media-breakpoint-down(md)
+			flex-direction: column
+		&:last-child
+			border-bottom: none
+	&__cover
+		width: 100%
+		max-width: 260px
+		min-width: 260px
+		@include media-breakpoint-down(md)
+			margin: 0 auto 30px
+	&__info
+		margin-left: 30px
+		@include media-breakpoint-down(md)
+			margin-left: 0
+	&__info-anons
+		margin-bottom: 5px
+		color: $gray
+		&:last-child
+			margin-bottom: 20px
+		span
+			color: $textcolor
+	&__genres
+		display: flex
+		span
+			display: inline-block
+			padding: 4px 11px
+			background-color: #F2F1F1
+			border-radius: 50px
+			margin-bottom: 15px
+			font-size: 12px
+			margin-right: 5px
+			&:last-child
+				margin-right: 0
+	&__title
+		font-size: 21px
+		font-weight: 700
+		margin-bottom: 5px
+	&__author
+		margin-bottom: 15px
+	&__rating
+		margin-bottom: 15px
+		font-size: 12px
+	&__desc
+		margin-top: 20px
+		p
+			&:first-child
+				display: inline
+			&:nth-child(2)
+				margin-top: 1rem
+			&:last-child
+				margin-bottom: 0

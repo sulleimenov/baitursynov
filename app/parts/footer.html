@@ -1,0 +1,54 @@
+	
+	<!-- <div class="opening show">
+		<div class="opening__box">
+			<div class="opening__title">Скоро<br> открытие</div>
+			<div class="opening__timer" id="timer">
+				<div class="opening__timer-item">
+					<div class="opening__timer-count days">00</div>
+					<div class="opening__timer-name uncorrectDays">Дней</div>
+				</div>
+				<div class="opening__timer-item">
+					<div class="opening__timer-count hours">00</div>
+					<div class="opening__timer-name uncorrectHours">Часов</div>
+				</div>
+				<div class="opening__timer-item">
+					<div class="opening__timer-count minutes">00</div>
+					<div class="opening__timer-name uncorrectMinutes">Минут</div>
+				</div>
+				<div class="opening__timer-item">
+					<div class="opening__timer-count seconds">00</div>
+					<div class="opening__timer-name uncorrectSeconds">Секунд</div>
+				</div>
+			</div>
+			<div class="opening__text">Оставайтесь с нами</div>
+		</div>
+		<div class="opening__close" onclick="soundClick()"></div>
+	</div>
+	<script>
+		function soundClick() {
+			var audio = new Audio(); // Создаём новый элемент Audio
+			audio.src = '/images/11.mp3'; // Указываем путь к звуку "клика"
+			audio.autoplay = true; // Автоматически запускаем
+		}
+	</script> -->
+	
+	<div class="modal micromodal-slide" id="search" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+				<form action="{{ searchInput.searchPage|page }}?q={{ query|url_encode(true) }}" method="GET" class="search-modal__form">
+					<input type="text" name="q" placeholder="Введите запрос" class="search-modal__input" value="{{ searchInput.query }}">
+					<input type="button" class="search-modal__button">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="footer__text">
+			© 2021 Некоммерческое акционерное общество «Костанайский региональный университет имени А.Байтурсынова»
+		</div>
+	</footer>
+
+	<script src="js/app.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+$accent: #1D57A5
+$fontsize: 15px
+$textcolor: #1b2f3f
+$lineheight: 1.55
+$userfont: 'Roboto', sans-serif
+
+
+// Colors
+$yellow: #ffc147
+$border: #E6E6E6
+$gray: #a3a3a3
+
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+
+// Import section
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
+@import 'node_modules/@fancyapps/ui/src/fancybox/fancybox.scss'
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'
+
+
+// Font loaded
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.ttf')
+@include font('Roboto', italic, 400, '../fonts/Roboto-Italic.ttf')
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.ttf')
+@include font('Roboto', italic, 700, '../fonts/Roboto-BoldItalic.ttf')
+
+
+// General css
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+a
+	color: $textcolor
+	text-decoration: none
+	&:hover
+		text-decoration: none
+		color: $textcolor
+
+img
+	max-width: 100%
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden

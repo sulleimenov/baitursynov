@@ -1,0 +1,224 @@
+.header
+	display: flex
+	justify-content: space-between
+	align-items: center
+	height: 90px
+	&__left
+		display: flex
+		align-items: center
+	&__rigth
+		display: flex
+	&__logo
+		width: 58px
+		height: 58px
+		background-color: $yellow
+		display: flex
+		align-items: center
+		justify-content: center
+		border-radius: 50px
+		margin-right: 15px
+	&__logo-desc
+		text-transform: uppercase
+		font-weight: 700
+		@include media-breakpoint-down(md)
+			display: none
+	&__search
+		background-color: transparent
+		margin-right: 30px
+		border: none
+
+.menu-wrapper
+	position: sticky
+	top: 0
+	width: 100%
+	z-index: 100
+	height: 43px
+	background-color: $accent
+	margin-bottom: 30px
+	@include media-breakpoint-down(md)
+		display: flex
+		align-items: center
+	&.stick
+		position: fixed
+	&__burger-tap
+		position: absolute
+		right: 15px
+		width: 60px
+		height: 43px
+		display: flex
+		align-items: center
+		justify-content: center
+	&__burger
+		position: relative
+		width: 25px
+		height: 17px
+		@include media-breakpoint-up(md)
+			display: none
+		span
+			position: absolute
+			background-color: #fff
+			width: 25px
+			top: 8px
+			height: 1px
+		&::before
+			position: absolute
+			content: ''
+			background-color: #fff
+			width: 25px
+			height: 1px
+			top: 0
+		&::after
+			position: absolute
+			content: ''
+			background-color: #fff
+			width: 25px
+			height: 1px
+			bottom: 0
+		&.is-open
+			span
+				display: none
+
+.menu
+	display: flex
+	list-style-type: none
+	padding-left: 0
+	@include media-breakpoint-down(md)
+		position: absolute
+		top: 43px
+		left: 0
+		right: 0
+		background-color: $accent
+		flex-direction: column
+		padding: 0 15px
+		padding-bottom: 25px
+		opacity: 0
+		visibility: hidden
+		transition: opacity 0.2s ease
+	&.show
+		opacity: 1
+		visibility: visible
+		transition: opacity 0.2s ease
+	&__item
+		position: relative
+		margin-right: 40px
+		@include media-breakpoint-down(md)
+			margin-right: 0
+			&::after
+				content: ''
+				position: absolute
+				width: 9px
+				height: 6px
+				// background-image: url(../images/icons/down-white.svg)
+				background-repeat: no-repeat
+		&:hover
+			@include media-breakpoint-up(md)
+				.menu__dropdown
+					opacity: 1
+					visibility: visible
+					transform: translateX(0)
+					transition: transform .3s ease-out
+		&:last-child
+			margin-right: 0
+	&__item-link
+		display: block
+		padding: 10px 0
+		color: #fff
+		+hover
+	&__item-dropdown
+		@include media-breakpoint-down(md)
+			position: relative
+			&::after
+				content: ''
+				position: absolute
+				top: 19px
+				right: 0
+				width: 9px
+				height: 6px
+				background-image: url(../images/icons/down-white.svg)
+	&__dropdown
+		position: absolute
+		left: -20px
+		z-index: 10
+		list-style-type: none
+		background-color: #fff
+		width: 290px
+		padding-left: 0
+		+shadow-dark
+		+border
+		opacity: 1
+		visibility: hidden
+		transform: translateY(-8px)
+		transition: transform opacity .3s ease-out
+		&.collapsing
+			transition: height .3s ease
+		@include media-breakpoint-down(md)
+			position: static
+			width: 100%
+			padding: 0 0 0 15px
+			background-color: $accent
+			box-shadow: none
+			&:not(.show)
+				display: none
+				visibility: visible
+	&__dropdown-link
+		display: block
+		padding: 5px 0
+		@include media-breakpoint-up(md)
+			padding: 5px 20px
+		&:first-child
+			padding-top: 10px
+		&:last-child
+			padding-bottom: 10px
+		&:hover
+			background-color: rgba($accent, 0.08)
+		@include media-breakpoint-down(md)
+			color: #fff
+
+.lang
+	background: url(../images/icons/down.svg) center right no-repeat
+	cursor: pointer
+	padding: 10px 0
+	padding-right: 13px
+	position: relative
+	&:hover
+		.lang__dropdown
+			display: block
+	&__dropdown
+		display: none
+		position: absolute
+		z-index: 1000
+		right: -10px
+		top: 40px
+		background-color: #fff
+		padding: 5px 10px
+		border-radius: 3px
+		+shadow-dark
+		a
+			display: block
+			padding: 5px 10px
+
+.breadcrumb-wrapper
+	background-color: $accent
+	margin-bottom: 30px
+
+.breadcrumb-lists
+	display: flex
+	align-items: center
+	height: 50px
+	margin: 0
+	padding: 0
+	color: #fff
+	padding-bottom: 1px
+	&-item
+		list-style-type: none
+		margin-right: 14px
+		position: relative
+		&::after
+			content: '/'
+			position: absolute
+			right: -10px
+		&:last-child
+			&::after
+				content: ''
+		a
+			color: #fff

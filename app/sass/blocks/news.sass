@@ -1,0 +1,42 @@
+.news
+	display: grid
+	grid-template-columns: 1fr 1fr 1fr
+	grid-template-rows: none
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	+mb
+	@include media-breakpoint-down(lg)
+		grid-template-columns: 1fr 1fr
+		grid-template-rows: none
+	@include media-breakpoint-down(sm)
+		grid-template-columns: 1fr
+		grid-template-rows: none
+		grid-row-gap: 30px
+	&__item
+		overflow: hidden
+		background-color: #fff
+		+border
+		+shadow
+		transition: transform .2s ease
+		&:hover
+			transition: transform .2s ease
+			transform: scale(1.1)
+	&__text
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 10px 15px
+		height: 120px
+	&__image
+		background-size: cover
+		background-position: center
+		height: 230px
+	&__title
+		font-weight: 700
+		line-height: 20px
+	&__info
+		display: flex
+		justify-content: space-between
+		color: #BFC1C7
+	&__info-link
+		font-size: 12px

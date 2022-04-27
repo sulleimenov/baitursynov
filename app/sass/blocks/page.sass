@@ -1,0 +1,19 @@
+.page
+	display: flex
+	justify-content: space-between
+	@include media-breakpoint-down(md)
+		flex-wrap: wrap
+
+.content
+	margin-right: 30px
+	width: 100%
+	@include media-breakpoint-down(md)
+		margin-right: 0
+		margin-bottom: 30px
+	&__header
+		margin-bottom: 35px
+	&__body
+		background-color: #fff
+		border-radius: 5px
+		padding: 30px
+		min-height: 600px

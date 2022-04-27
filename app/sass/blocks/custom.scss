@@ -1,0 +1,33 @@
+div.divider {
+	font-family: monospace;
+	color: #343959;
+	font-size: 1.9em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem 0;
+	height: 3vh;
+}
+div.divider::before,
+div.divider::after {
+	content: '';
+	display: block;
+	height: 1px;
+	min-width: 21vw;
+	margin-bottom: .5rem;
+}
+	
+div.divider::before {
+	background: linear-gradient(to right, rgba(240,240,240,0), #343959);
+	margin-right: 2vh;
+}
+
+div.divider::after {
+	background: linear-gradient(to left, rgba(240,240,240,0), #343959);
+	margin-left: 2vh;
+} 
+
+blockquote.words {
+	text-align: center;
+	font-style: italic;
+}

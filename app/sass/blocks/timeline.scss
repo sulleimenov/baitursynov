@@ -1,0 +1,83 @@
+.timeline {
+	width: 100%;
+	max-width: 800px;
+	padding: 5rem 1rem;
+	position: relative;
+	margin: 0 auto;
+}
+.timeline h3::before {
+	width: 0;
+	height: 0;
+}
+.timeline:before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: calc(33% + 8px);
+	bottom: 0px;
+	width: 4px;
+	background: #ddd;
+}
+.timeline:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.entry {
+	clear: both;
+	text-align: left;
+	position: relative;
+}
+.entry .title {
+	margin-bottom: 0.5em;
+	float: left;
+	width: 33%;
+	padding-right: 30px;
+	text-align: right;
+	position: relative;
+	margin-top: 0;
+}
+.entry .title:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 4px solid salmon;
+  background-color: #fff;
+  border-radius: 100%;
+  top: 1rem;
+  right: -13px;
+  z-index: 99;
+  left: auto;
+}
+.entry .title h3 {
+	margin: 0;
+	font-size: 120%;
+}
+.entry .title p {
+	margin: 0;
+	font-size: 1rem;
+}
+.entry .body {
+	margin: .8rem 0 3em;
+	float: right;
+	width: 66%;
+	padding-left: 30px;
+}
+.entry .body p {
+	line-height: 1.4em;
+}
+.entry .body p:first-child {
+	margin-top: 0;
+	font-weight: 400;
+}
+.entry .body ul {
+	color: #aaa;
+	padding-left: 0;
+	list-style-type: none;
+}
+.entry .body ul li:before {
+	content: "–";
+	margin-right: 0.5em;
+}

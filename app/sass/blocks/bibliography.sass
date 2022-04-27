@@ -1,0 +1,35 @@
+.bibliography
+	display: grid
+	grid-template-columns: repeat(2, 1fr)
+	grid-template-rows: none
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	@include media-breakpoint-down(sm)
+		grid-template-columns: 1fr
+		grid-template-rows: none
+	&__item
+		padding: 15px
+		border: 1px solid rgba($accent, 0.2)
+		display: flex
+		flex-direction: column
+		align-items: center
+		+border
+	&__image
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+		width: 100%
+		height: 350px
+		@include media-breakpoint-down(lg)
+			height: 300px
+		@include media-breakpoint-down(md)
+			height: 200px
+	&__link
+		margin-top: 10px
+		margin-bottom: 10px
+		text-decoration: underline
+	&__desc
+		text-align: center
+		border: 1px solid rgba($accent, 0.2)
+		padding: 10px
+		+border

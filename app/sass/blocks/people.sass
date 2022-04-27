@@ -1,0 +1,95 @@
+.people
+	min-height: 680px
+
+.people-list
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	grid-template-rows: none
+	grid-column-gap: 30px
+	grid-row-gap: 30px
+	min-height: 600px
+	@include media-breakpoint-down(lg)
+		grid-template-columns: repeat(2, 1fr)
+		grid-template-rows: none
+	@include media-breakpoint-down(sm)
+		grid-template-columns: repeat(1, 1fr)
+		grid-template-rows: none
+	&__item
+		height: 300px
+		border-radius: 5px
+		overflow: hidden
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		position: relative
+		@include media-breakpoint-down(sm)
+			height: 380px
+			background-position: top center
+	&__info
+		position: absolute
+		bottom: 0
+		width: 100%
+		padding: 20px 0
+		text-align: center
+		background-color: rgba(#fff, 0.85)
+	&__title
+		font-weight: 700
+	&__subtitle
+		font-size: 12px
+
+// .people
+.people-header
+	background-color: #E6E6E6
+	border-radius: 5px
+	display: flex
+	padding: 15px 20px
+	margin-bottom: 40px
+	&__images
+		width: 100px
+		min-width: 100px
+		height: 100px
+		border-radius: 50px
+		background-repeat: no-repeat
+		background-position: top center
+		background-size: cover
+		margin-right: 30px
+		@include media-breakpoint-down(sm)
+			width: 50px
+			height: 50px
+			min-width: 50px
+	&__info
+		padding-top: 20px
+		@include media-breakpoint-down(sm)
+			padding-top: 0
+	&__title
+		font-size: 21px
+		font-weight: 700
+
+.people-body
+	&__list
+		display: flex
+		flex-direction: column
+	&__list-item
+		padding: 17px 0
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100px
+			height: 2px
+			background-color: $textcolor
+	&__list-title
+		font-size: 16px
+		font-weight: 700
+		margin-bottom: 15px
+	&__list-descr
+		margin-bottom: 20px
+	&__list-deownload
+		display: inline-block
+		padding-right: 20px
+		background-image: url(../images/icons/download.svg)
+		background-repeat: no-repeat
+		background-position: right center
+		cursor: pointer

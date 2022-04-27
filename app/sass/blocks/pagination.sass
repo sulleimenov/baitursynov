@@ -1,0 +1,19 @@
+.pagination
+	display: flex
+	justify-content: flex-end
+	width: 100%
+	list-style-type: none
+	li
+		width: 35px
+		height: 35px
+		border-radius: 5px
+		display: flex
+		align-items: center
+		justify-content: center
+		a[rel=prev]
+			font-size: 25px
+		a[rel=next]
+			font-size: 25px
+		&.active
+			background-color: $accent!important
+			color: #fff!important

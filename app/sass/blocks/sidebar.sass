@@ -1,0 +1,59 @@
+.sidebar-wrapper
+	max-width: 300px
+	min-width: 300px
+	@include media-breakpoint-down(md)
+		max-width: 100%
+		min-width: 100%
+
+.sidebar
+	background-color: #fff
+	border-radius: 5px
+	padding: 25px 15px
+	&__header
+		font-weight: 700
+		border-bottom: 1px solid #E5E8E8
+		margin-bottom: 10px
+		padding: 0 16px 8px
+
+.sidebar-list
+	padding: 0
+	margin-bottom: 0
+	list-style-type: none
+	&__item
+		transition: all 0.3s
+		a
+			display: block
+			padding: 8px 16px
+			border-radius: 3px
+			margin-bottom: 3px
+		&--active
+			a
+				background-color: #E8E8E8
+		&:hover
+			background-color: #EDEDED
+
+.search
+	position: relative
+	margin-bottom: 30px
+	display: flex
+	align-items: center
+	background-color: #fff
+	border-radius: 5px
+
+	&__input
+		padding: 15px 20px
+		width: 100%
+		border: none
+		border-radius: 5px
+	&__button
+		position: absolute
+		right: 10px
+		background-color: transparent
+		border: none
+		background: url(../images/icons/search.svg) center no-repeat
+		width: 30px
+		height: 30px
+		display: flex
+		align-items: center
+		justify-content: center
+

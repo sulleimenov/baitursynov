@@ -1,0 +1,146 @@
+@mixin shadow
+	box-shadow: 0 0 20px 0 rgba(150, 150, 150, 0.1)
+
+@mixin shadow-dark
+	box-shadow: 0 0 20px 0 rgba(150, 150, 150, 0.3)
+
+@mixin border()
+	border-radius: 5px
+
+@mixin hover()
+	&:hover
+		color: $yellow
+
+@mixin mb()
+	margin-bottom: 80px
+
+
+.section
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-top: 50px
+	margin-bottom: 30px
+	&__title
+		position: relative
+		font-size: 28px
+		font-weight: 700
+		@include media-breakpoint-down(sm)
+			font-size: 24px
+	&__all
+		position: relative
+		min-width: 110px
+		text-transform: uppercase
+		padding-right: 20px
+		&::after
+			content: ''
+			position: absolute
+			top: 3px
+			right: 0
+			width: 15px
+			height: 15px
+			background: url(../images/icons/arrow-right-r.svg)
+			background-repeat: no-repeat
+			background-position: right center
+			transition: right 0.2s ease
+		&:hover
+			&::after
+				right: -5px
+
+.page-title-box
+	display: flex
+	justify-content: center
+
+.page-title
+	display: inline-block
+	margin: 0 auto
+	position: relative
+	margin-bottom: 25px
+	text-align: center
+	&::before
+		content: ''
+		position: absolute
+		top: 23px
+		left: -70px
+		width: 50px
+		height: 2px
+		background-color: #DDDDDD
+		@include media-breakpoint-down(lg)
+			top: 20px
+		@include media-breakpoint-down(sm)
+			top: 17px
+	&::after
+		content: ''
+		position: absolute
+		top: 23px
+		right: -70px
+		width: 50px
+		height: 2px
+		background-color: #DDDDDD
+		@include media-breakpoint-down(lg)
+			top: 20px
+		@include media-breakpoint-down(sm)
+			top: 17px
+
+.content
+	ul
+		li
+			list-style-type: none
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				width: 8px
+				left: -17px
+				top: 7px
+				height: 8px
+				border: 2px solid $yellow
+				transform: rotateZ(45deg)
+
+	h2, h3, h4, h5, h6
+		margin-top: 1.5rem
+		margin-bottom: 1.2rem
+		font-weight: 800
+		position: relative
+		padding-top: 10px
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			width: 50px
+			height: 2px
+			background-color: $textcolor
+
+	blockquote
+		padding: 50px 30px
+		background-color: #F3F5F6
+		text-align: center
+		font-style: italic
+		+border
+		position: relative
+		margin-top: 35px
+		margin-bottom: 35px
+		&::before
+			content: ''
+			position: absolute
+			top: -25px
+			left: 0
+			right: 0
+			margin: 0 auto
+			background-image: url(../images/icons/blockquote.svg)
+			background-repeat: no-repeat
+			background-size: 50px
+			width: 50px
+			height: 50px
+		&::after
+			content: ''
+			position: absolute
+			width: 50px
+			height: 2px
+			background-color: $textcolor
+			left: 0
+			right: 0
+			bottom: 30px
+			margin: 0 auto
+		p
+			margin-bottom: 0

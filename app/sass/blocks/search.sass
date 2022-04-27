@@ -1,0 +1,35 @@
+.search-results
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: none
+	grid-row-gap: 30px
+	&__item
+		padding: 25px
+		+shadow
+		+border
+	&__title
+		font-size: 18px
+		font-weight: 700
+		margin-bottom: 15px
+	&__desc
+		color: $gray
+		margin-bottom: 15px
+	&__link
+		display: inline-block
+		position: relative
+		padding-right: 15px
+		padding-right: 20px
+		&::after
+			background: url(../images/icons/arrow-right-r.svg)
+			background-position: 100%
+			background-repeat: no-repeat
+			content: ""
+			height: 15px
+			position: absolute
+			right: 0
+			top: 4px
+			transition: right .2s ease
+			width: 15px
+		&:hover
+			&::after
+				right: -5px
