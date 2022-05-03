@@ -1,0 +1,51 @@
+.materials-conferences
+
+.materials-conferences-list
+	display: grid
+	grid-template-columns: repeat(1, 1fr)
+	grid-template-rows: auto
+	gap: 30px
+	&__item
+		padding: 30px
+		+shadow
+		+border
+	&__title
+		font-size: 20px
+		font-weight: 700
+		margin-bottom: 5px
+	&__subtitle
+		color: $gray
+		margin-bottom: 15px
+	&__descr
+		font-size: 14px
+		margin-bottom: 30px
+	&__info
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 30px
+		@include media-breakpoint-down(sm)
+			flex-direction: column
+			align-items: start
+	&__date
+		display: flex
+		flex-wrap: wrap
+		column-gap: 30px
+		color: $gray
+		font-size: 12px
+		width: 50%
+	&__link
+		display: inline-block
+		word-spacing: normal
+		padding: 9px 25px
+		background-color: $accent
+		color: #fff
+		font-weight: 700
+		transition: background .2s ease
+		font-size: 14px
+		height: 40px
+		text-align: center
+		+border
+		&:hover
+			background-color: #236cce
+			color: #fff
